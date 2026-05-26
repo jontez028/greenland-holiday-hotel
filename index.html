@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenland Holiday Centre — Molo, Kenya</title>
+<meta name="description" content="Greenland Holiday Centre in Molo, Nakuru County — your go-to venue for conferences, workshops, training sessions and comfortable accommodation in the Rift Valley.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(10,28,18,0.80) 0%, rgba(20,50,32,0.55) 60%, rgba(30,70,44,0.60) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat; animation: heroZoom 20s ease-in-out infinite alternate; }
+@keyframes heroZoom { from { transform: scale(1.04); } to { transform: scale(1.0); } }
+.hero-content { position: relative; z-index: 2; padding: 0 3rem; max-width: 720px; animation: fadeUp 1.2s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.hero-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-light); border: 1px solid rgba(200,152,58,0.4); padding: 0.35rem 1rem; margin-bottom: 1.5rem; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 400; color: white; line-height: 1.08; margin-bottom: 1.2rem; }
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); font-weight: 300; line-height: 1.7; margin-bottom: 2.2rem; max-width: 480px; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-scroll { position: absolute; bottom: 2.5rem; left: 3rem; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.4); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; z-index: 2; }
+.scroll-line { width: 40px; height: 1px; background: rgba(255,255,255,0.3); }
+
+/* QUICK INFO BAR */
+.info-bar { background: var(--green-deep); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); }
+.info-item { padding: 1.4rem 2rem; border-right: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 12px; }
+.info-item:last-child { border-right: none; }
+.info-icon { font-size: 1.3rem; color: var(--gold); flex-shrink: 0; }
+.info-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
+.info-val { font-size: 0.88rem; color: white; font-weight: 400; }
+
+/* ABOUT */
+.about { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-img-wrap { position: relative; }
+.about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+.about-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: var(--green-deep); padding: 1.2rem 1.4rem; text-align: center; }
+.about-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; line-height: 1; }
+.about-badge span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+.astat { border-left: 2px solid var(--gold); padding-left: 1rem; }
+.astat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; color: var(--green-deep); line-height: 1; }
+.astat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+
+/* SERVICES */
+.services { background: var(--warm-white); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 3rem; }
+.service-card { background: white; border: 1px solid var(--border); padding: 2rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,58,40,0.12); }
+.service-card:hover::before { transform: scaleX(1); }
+.svc-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
+.svc-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--green-deep); margin-bottom: 0.6rem; }
+.svc-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+/* CONFERENCE HIGHLIGHT */
+.conf-highlight { background: var(--green-deep); display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.conf-img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
+.conf-content { padding: 5rem 4rem; }
+.conf-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.conf-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.conf-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+
+/* CLIENTS */
+.clients { background: var(--cream); text-align: center; padding: 4rem 3rem; }
+.clients-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
+.client-tag { background: white; border: 1px solid var(--border); padding: 0.6rem 1.3rem; font-size: 0.82rem; color: var(--text-mid); }
+
+/* CONTACT STRIP */
+.contact-strip { background: var(--green-mid); padding: 3.5rem; text-align: center; }
+.contact-strip h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: white; margin-bottom: 0.6rem; }
+.contact-strip p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 2rem; }
+.contact-strip-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .hero-content { padding: 0 1.5rem; }
+  .hero-scroll { left: 1.5rem; }
+  .info-item { padding: 1rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .about { grid-template-columns: 1fr; gap: 3rem; }
+  .about-badge { right: 1rem; }
+  .conf-highlight { grid-template-columns: 1fr; }
+  .conf-img { min-height: 250px; }
+  .conf-content { padding: 3rem 1.5rem; }
+  .clients { padding: 3rem 1.5rem; }
+  .contact-strip { padding: 3rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">Greenland Holiday Centre</span>
+    <span class="nav-logo-sub">Molo, Nakuru County</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="conference.html">Conferences</a></li>
+    <li><a href="accommodation.html">Stay</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Enquire Now</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  <a href="index.html">Home</a>
+  <a href="conference.html">Conferences</a>
+  <a href="accommodation.html">Stay</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold-light); font-size:1.2rem; margin-top:1rem;">Enquire Now →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Molo · Nakuru County · Rift Valley</div>
+    <h1>Your Meeting.<br><em>Our Venue.</em><br>Molo's Choice.</h1>
+    <p class="hero-sub">Greenland Holiday Centre is Molo's trusted venue for conferences, workshops, training sessions and comfortable accommodation — serving businesses, NGOs, government bodies and community groups.</p>
+    <div class="hero-actions">
+      <a href="conference.html" class="btn btn-gold">Conference Facilities</a>
+      <a href="contact.html" class="btn btn-outline-light">Get a Quote</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- QUICK INFO BAR -->
+<div class="info-bar">
+  <div class="info-item">
+    <span class="info-icon">📍</span>
+    <div>
+      <div class="info-label">Location</div>
+      <div class="info-val">Molo-Olenguruone Road, past Equity Bank</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <span class="info-icon">📞</span>
+    <div>
+      <div class="info-label">Call or WhatsApp</div>
+      <div class="info-val">+254 702 102207</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <span class="info-icon">🏢</span>
+    <div>
+      <div class="info-label">Primary Service</div>
+      <div class="info-val">Conferences, Workshops & Events</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <span class="info-icon">🛏️</span>
+    <div>
+      <div class="info-label">Accommodation</div>
+      <div class="info-val">Bed & Breakfast Available</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about section">
+  <div class="about-img-wrap">
+    <img class="about-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="Conference meeting at Greenland Holiday Centre" loading="lazy">
+    <div class="about-badge">
+      <strong>Molo</strong>
+      <span>Trusted Venue</span>
+    </div>
+  </div>
+  <div>
+    <p class="label">Who We Are</p>
+    <h2 class="heading">Molo's Go-To Venue for <em>Events & Stays</em></h2>
+    <div class="gold-line"></div>
+    <p class="subtext">Greenland Holiday Centre is a well-established, locally-rooted venue in Molo, Nakuru County. We specialise in providing a conducive, professional environment for conferences, workshops, training sessions, community meetings and events — while also offering comfortable bed and breakfast accommodation.</p>
+    <p class="subtext mt-1">Whether you are an NGO running a training programme, a government body hosting a workshop, a business team holding a planning session, or a community group organising a gathering — we have the space, the support and the experience to make it work.</p>
+    <div class="about-stats">
+      <div class="astat"><div class="astat-num">B&B</div><div class="astat-label">Accommodation included</div></div>
+      <div class="astat"><div class="astat-num">NGOs</div><div class="astat-label">Government & corporate clients</div></div>
+      <div class="astat"><div class="astat-num">Day</div><div class="astat-label">& residential events hosted</div></div>
+      <div class="astat"><div class="astat-num">Molo</div><div class="astat-label">Nakuru County, Rift Valley</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section">
+  <div style="max-width:600px; margin-bottom:3rem;">
+    <p class="label">What We Offer</p>
+    <h2 class="heading">Everything You Need,<br><em>Under One Roof</em></h2>
+    <div class="gold-line"></div>
+    <p class="subtext">From a half-day workshop to a multi-day residential training — we handle the space, the setup and the catering so you can focus on what matters.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="svc-icon">🎯</span>
+      <div class="svc-title">Conferences & Workshops</div>
+      <p class="svc-desc">Fully equipped meeting and conference halls for workshops, training sessions, seminars and community forums of varying sizes.</p>
+    </div>
+    <div class="service-card">
+      <span class="svc-icon">🏛️</span>
+      <div class="svc-title">Government & NGO Events</div>
+      <p class="svc-desc">Experienced in hosting government agencies, NGOs, conservation projects and public sector events with the required setup and catering.</p>
+    </div>
+    <div class="service-card">
+      <span class="svc-icon">🛏️</span>
+      <div class="svc-title">Accommodation</div>
+      <p class="svc-desc">Spacious, clean and comfortable rooms with bed and breakfast. Ideal for delegates attending multi-day events or travellers in the Rift Valley.</p>
+    </div>
+    <div class="service-card">
+      <span class="svc-icon">🍽️</span>
+      <div class="svc-title">Event Catering</div>
+      <p class="svc-desc">Meals, tea breaks and refreshments for your delegates throughout the day. Catering packages available to match your event schedule.</p>
+    </div>
+    <div class="service-card">
+      <span class="svc-icon">🏆</span>
+      <div class="svc-title">Ceremonies & Networking</div>
+      <p class="svc-desc">Hosting certificate award ceremonies, networking events and community meetings with the setup and atmosphere they deserve.</p>
+    </div>
+    <div class="service-card">
+      <span class="svc-icon">🚗</span>
+      <div class="svc-title">Parking & Accessibility</div>
+      <p class="svc-desc">On-site parking for delegates and guests. Conveniently located along Molo-Olenguruone Road, easy to find and easy to reach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCE HIGHLIGHT -->
+<div class="conf-highlight">
+  <img class="conf-img" src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=700&q=80" alt="Workshop training at Greenland" loading="lazy">
+  <div class="conf-content">
+    <p class="label label-light">Conference Venue</p>
+    <h2 class="heading heading-light">A <em>Conducive Environment</em> for Productive Meetings</h2>
+    <div class="gold-line"></div>
+    <p class="subtext subtext-light">We have hosted a wide range of events for organisations across Nakuru County and beyond. Our venue is trusted by those who need a reliable, distraction-free space to get things done.</p>
+    <ul class="conf-list">
+      <li>Installer training programmes and technical workshops</li>
+      <li>Food safety, HACCP and compliance trainings</li>
+      <li>Forest conservation & environmental project meetings</li>
+      <li>Political and community engagement forums</li>
+      <li>Certificate award ceremonies and graduations</li>
+      <li>Business strategy and NGO planning sessions</li>
+    </ul>
+    <a href="conference.html" class="btn btn-gold mt-2">View Conference Facilities</a>
+  </div>
+</div>
+
+<!-- CLIENTS -->
+<section class="clients">
+  <p class="label" style="justify-content:center; display:block;">Who We Serve</p>
+  <h2 class="heading" style="color:var(--green-deep);">Trusted by Organisations <em>Across the Region</em></h2>
+  <div class="gold-line" style="margin:1rem auto 0;"></div>
+  <div class="clients-grid">
+    <div class="client-tag">Government Agencies</div>
+    <div class="client-tag">NGOs & Nonprofits</div>
+    <div class="client-tag">Conservation Projects</div>
+    <div class="client-tag">Training Institutions</div>
+    <div class="client-tag">Community Groups</div>
+    <div class="client-tag">Private Companies</div>
+    <div class="client-tag">Political Organisations</div>
+    <div class="client-tag">Public Procurement Entities</div>
+    <div class="client-tag">Health & Safety Programmes</div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <h2>Ready to Book Your Event?</h2>
+  <p>Contact us for conference packages, accommodation rates and availability.</p>
+  <div class="contact-strip-btns">
+    <a href="tel:+254702102207" class="btn btn-gold">📞 Call +254 702 102207</a>
+    <a href="https://wa.me/254702102207" class="btn btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+    <a href="contact.html" class="btn btn-outline-light">Send an Enquiry</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Greenland Holiday Centre</div>
+      <p class="footer-tagline">Molo's trusted venue for conferences, workshops, training sessions and accommodation. Serving businesses, NGOs, government and community groups in Nakuru County.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="conference.html">Conference Facilities</a></li>
+        <li><a href="accommodation.html">Accommodation</a></li>
+        <li><a href="contact.html">Contact & Location</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><span>📍 Molo-Olenguruone Road</span></li>
+        <li><span>Past Equity Bank, Molo</span></li>
+        <li><a href="tel:+254702102207">📞 +254 702 102207</a></li>
+        <li><a href="https://wa.me/254702102207">💬 WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" target="_blank">📘 Facebook Page</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Greenland Holiday Centre, Molo. All rights reserved.</p>
+    <a href="#">Website by Your Name / Agency</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+  document.getElementById('hamburger').onclick = () => document.getElementById('mobileMenu').classList.add('open');
+  document.getElementById('mobileClose').onclick = () => document.getElementById('mobileMenu').classList.remove('open');
+</script>
+</body>
+</html>
 
