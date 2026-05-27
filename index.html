@@ -4,92 +4,236 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Greenland Holiday Centre — Molo, Kenya</title>
-<meta name="description" content="Greenland Holiday Centre in Molo, Nakuru County — your go-to venue for conferences, workshops, training sessions and comfortable accommodation in the Rift Valley.">
-<link rel="stylesheet" href="shared.css">
+<meta name="description" content="Molo's premier conference venue and accommodation. Greenland Holiday Centre — where Nakuru County meets, trains and stays.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(10,28,18,0.80) 0%, rgba(20,50,32,0.55) 60%, rgba(30,70,44,0.60) 100%), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat; animation: heroZoom 20s ease-in-out infinite alternate; }
-@keyframes heroZoom { from { transform: scale(1.04); } to { transform: scale(1.0); } }
-.hero-content { position: relative; z-index: 2; padding: 0 3rem; max-width: 720px; animation: fadeUp 1.2s ease both; }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.hero-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-light); border: 1px solid rgba(200,152,58,0.4); padding: 0.35rem 1rem; margin-bottom: 1.5rem; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 400; color: white; line-height: 1.08; margin-bottom: 1.2rem; }
-.hero h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
-.hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); font-weight: 300; line-height: 1.7; margin-bottom: 2.2rem; max-width: 480px; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-.hero-scroll { position: absolute; bottom: 2.5rem; left: 3rem; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.4); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; z-index: 2; }
-.scroll-line { width: 40px; height: 1px; background: rgba(255,255,255,0.3); }
+:root{--ink:#0e1a0f;--forest:#1a4028;--forest2:#2d6644;--leaf:#3d8b5e;--gold:#d4943a;--gold2:#f0b84a;--cream:#fdf6ed;--sand:#f0e6d0;--rust:#c45c2a;--white:#fff;--muted:#6b7a6e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
 
-/* QUICK INFO BAR */
-.info-bar { background: var(--green-deep); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); }
-.info-item { padding: 1.4rem 2rem; border-right: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 12px; }
-.info-item:last-child { border-right: none; }
-.info-icon { font-size: 1.3rem; color: var(--gold); flex-shrink: 0; }
-.info-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
-.info-val { font-size: 0.88rem; color: white; font-weight: 400; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.solid{background:var(--forest);padding:.8rem 3rem;box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.logo{text-decoration:none}
+.logo-main{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#fff;display:block;letter-spacing:.02em;line-height:1.2}
+.logo-sub{font-size:.58rem;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.2em;text-transform:uppercase;display:block;margin-top:2px}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold2)}
+.nav-btn{background:var(--gold);color:var(--forest);font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.4rem;text-decoration:none;border:2px solid var(--gold);transition:all .2s}
+.nav-btn:hover{background:transparent;color:var(--gold2);border-color:var(--gold2)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;inset:0;background:var(--forest);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mob.open{display:flex}
+.mob a{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;text-decoration:none}
+.mob a:hover{color:var(--gold2)}
+.mob-x{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;animation:zoom 18s ease-in-out infinite alternate}
+@keyframes zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,12,.95) 0%,rgba(10,20,12,.45) 50%,rgba(10,20,12,.2) 100%)}
+.hero-body{position:relative;z-index:2;padding:0 3rem 5rem;max-width:850px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:1.5rem;animation:up .8s .2s both}
+.edot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.etxt{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:800;color:#fff;line-height:.95;letter-spacing:-.02em;margin-bottom:1.5rem;animation:up .9s .35s both}
+.hero h1 .ol{-webkit-text-stroke:2px var(--gold2);color:transparent}
+.hero h1 .it{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--gold2)}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,.65);max-width:500px;line-height:1.75;margin-bottom:2.5rem;font-weight:300;animation:up .9s .5s both}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;animation:up .9s .65s both}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--forest);font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;text-decoration:none;transition:all .25s;border:2px solid var(--gold)}
+.btn-gold:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-3px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;border:2px solid rgba(255,255,255,.35);text-decoration:none;transition:all .25s}
+.btn-ghost:hover{border-color:#fff;transform:translateY(-3px)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;text-decoration:none;transition:all .25s;border:2px solid #25D366}
+.btn-wa:hover{background:#1ebe5b;transform:translateY(-3px)}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* TICKER */
+.ticker{background:var(--gold);overflow:hidden;padding:.65rem 0;white-space:nowrap}
+.tick-inner{display:inline-flex;animation:tick 22s linear infinite}
+.tick-item{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--forest);padding:0 2rem}
+.tick-sep{color:var(--forest);opacity:.35;padding:0 .2rem}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* QUICK INFO */
+.qbar{background:var(--forest);display:grid;grid-template-columns:repeat(4,1fr)}
+.qi{padding:1.4rem 1.8rem;border-right:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px}
+.qi:last-child{border-right:none}
+.qi-icon{font-size:1.4rem;color:var(--gold);flex-shrink:0}
+.qi-label{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:2px}
+.qi-val{font-size:.85rem;color:#fff;font-weight:400}
 
 /* ABOUT */
-.about { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-.about-img-wrap { position: relative; }
-.about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
-.about-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: var(--green-deep); padding: 1.2rem 1.4rem; text-align: center; }
-.about-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; line-height: 1; }
-.about-badge span { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
-.astat { border-left: 2px solid var(--gold); padding-left: 1rem; }
-.astat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; color: var(--green-deep); line-height: 1; }
-.astat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+.about{padding:7rem 3rem;display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center;background:var(--cream)}
+.about-vis{position:relative}
+.about-main{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.about-thumb{position:absolute;bottom:-2.5rem;right:-2.5rem;width:52%;aspect-ratio:4/3;object-fit:cover;border:6px solid var(--cream);box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.about-chip{position:absolute;top:2rem;left:-2.5rem;background:var(--rust);padding:1.4rem 1.6rem;text-align:center}
+.chip-num{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;line-height:1;display:block}
+.chip-label{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);display:block;margin-top:4px}
+.section-eyebrow{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--leaf);font-weight:600;margin-bottom:.9rem;display:block}
+.h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--ink);line-height:1.05;margin-bottom:1.2rem}
+.h2 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--rust)}
+.body-text{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;font-weight:300}
+.pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
+.pill{background:var(--sand);color:var(--forest);font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:.4rem 1rem;border-radius:99px}
 
 /* SERVICES */
-.services { background: var(--warm-white); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 3rem; }
-.service-card { background: white; border: 1px solid var(--border); padding: 2rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,58,40,0.12); }
-.service-card:hover::before { transform: scaleX(1); }
-.svc-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
-.svc-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--green-deep); margin-bottom: 0.6rem; }
-.svc-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+.services{background:var(--forest);padding:7rem 3rem}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:2rem}
+.svc-head h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.05;max-width:380px}
+.svc-head h2 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--gold2)}
+.svc-head p{font-size:.9rem;color:rgba(255,255,255,.5);max-width:320px;line-height:1.7;font-weight:300}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07)}
+.svc-card{background:var(--forest);padding:2.5rem;position:relative;overflow:hidden;transition:background .3s,transform .3s}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.svc-card:hover{background:var(--forest2);transform:translateY(-4px)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-bg-num{font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;color:rgba(255,255,255,.04);position:absolute;top:.2rem;right:1rem;line-height:1;pointer-events:none}
+.svc-icon{width:50px;height:50px;background:rgba(212,148,58,.12);border:1px solid rgba(212,148,58,.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.5rem}
+.svc-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.svc-desc{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;font-weight:300}
 
-/* CONFERENCE HIGHLIGHT */
-.conf-highlight { background: var(--green-deep); display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
-.conf-img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
-.conf-content { padding: 5rem 4rem; }
-.conf-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
-.conf-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
-.conf-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+/* GALLERY STRIP — REAL PHOTOS */
+.gallery{background:var(--ink);padding:0}
+.gallery-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:320px 320px;gap:4px}
+.g-tile{overflow:hidden;position:relative;cursor:pointer}
+.g-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.g-tile:hover img{transform:scale(1.07)}
+.g-tile.tall{grid-row:span 2}
+.g-label{position:absolute;bottom:0;left:0;right:0;padding:3rem 1.2rem 1rem;background:linear-gradient(transparent,rgba(10,20,12,.9))}
+.g-label-name{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:2px}
+.g-label-desc{font-size:.7rem;color:rgba(255,255,255,.55)}
+.gallery-caption{background:var(--ink);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.gallery-caption p{font-size:.85rem;color:rgba(255,255,255,.45);font-weight:300}
+
+/* RESTAURANT */
+.restaurant{background:var(--sand);padding:7rem 3rem}
+.rest-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
+.rest-imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rest-imgs .big{grid-column:span 2;aspect-ratio:16/9;overflow:hidden}
+.rest-imgs .big img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.rest-imgs .big:hover img{transform:scale(1.04)}
+.rest-imgs .sm{aspect-ratio:1;overflow:hidden}
+.rest-imgs .sm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.rest-imgs .sm:hover img{transform:scale(1.06)}
+.rest-feature{display:flex;gap:14px;align-items:flex-start;margin-bottom:1.4rem}
+.rf-icon{width:42px;height:42px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.rf-title{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:3px}
+.rf-desc{font-size:.82rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* ROOMS */
+.rooms{background:var(--cream);padding:7rem 3rem}
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.room-card{background:#fff;overflow:hidden;border:1px solid rgba(26,64,40,.08);transition:transform .3s,box-shadow .3s}
+.room-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.room-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s}
+.room-card:hover .room-img{transform:scale(1.04)}
+.room-body{padding:1.5rem}
+.room-tag{display:inline-block;background:var(--sand);color:var(--forest);font-family:'Syne',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;margin-bottom:.8rem}
+.room-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--ink);margin-bottom:.5rem}
+.room-desc{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:1rem;font-weight:300}
+.room-feats{display:flex;flex-wrap:wrap;gap:.4rem}
+.rfeat{font-size:.7rem;color:var(--forest);font-weight:500;background:rgba(61,139,94,.08);padding:.25rem .6rem;border-radius:99px}
+.room-price-note{font-size:.75rem;color:var(--muted);margin-top:.8rem;padding-top:.8rem;border-top:1px solid rgba(26,64,40,.08)}
+
+/* CONF SPLIT */
+.conf{display:grid;grid-template-columns:1fr 1fr}
+.conf-img-col{position:relative;overflow:hidden;min-height:560px}
+.conf-img-col img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.conf-img-col:hover img{transform:scale(1.04)}
+.conf-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,20,12,.5) 0%,transparent 60%)}
+.conf-badge{position:absolute;top:2rem;left:2rem;background:var(--gold);color:var(--forest);font-family:'Syne',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem}
+.conf-content{background:var(--sand);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.conf-bullets{list-style:none;display:flex;flex-direction:column;gap:.8rem;margin:1.5rem 0 2rem}
+.conf-bullets li{display:flex;gap:12px;align-items:flex-start;font-size:.87rem;color:var(--muted);line-height:1.5;font-weight:300}
+.cb-dot{width:22px;height:22px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--forest);font-weight:700;flex-shrink:0;margin-top:1px}
 
 /* CLIENTS */
-.clients { background: var(--cream); text-align: center; padding: 4rem 3rem; }
-.clients-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
-.client-tag { background: white; border: 1px solid var(--border); padding: 0.6rem 1.3rem; font-size: 0.82rem; color: var(--text-mid); }
+.clients{background:var(--forest);padding:5rem 3rem;text-align:center}
+.clients h2{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:.5rem}
+.clients h2 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--gold2)}
+.clients-sub{font-size:.88rem;color:rgba(255,255,255,.45);margin-bottom:3rem;font-weight:300}
+.ctags{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem}
+.ctag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-family:'Syne',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.05em;padding:.5rem 1.2rem;cursor:default;transition:all .2s}
+.ctag:hover{background:var(--gold);border-color:var(--gold);color:var(--forest)}
 
-/* CONTACT STRIP */
-.contact-strip { background: var(--green-mid); padding: 3.5rem; text-align: center; }
-.contact-strip h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: white; margin-bottom: 0.6rem; }
-.contact-strip p { color: rgba(255,255,255,0.65); font-size: 0.95rem; margin-bottom: 2rem; }
-.contact-strip-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+/* BIG CTA */
+.big-cta{background:var(--ink);padding:6rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.big-cta h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.05}
+.big-cta h2 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--gold2)}
+.cta-right{display:flex;flex-direction:column;gap:1.2rem}
+.cta-right p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.7;font-weight:300}
+.cta-phone{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--gold2);text-decoration:none;letter-spacing:-.01em}
+.cta-phone:hover{color:#fff}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
 
-@media (max-width: 900px) {
-  .hero-content { padding: 0 1.5rem; }
-  .hero-scroll { left: 1.5rem; }
-  .info-item { padding: 1rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .about { grid-template-columns: 1fr; gap: 3rem; }
-  .about-badge { right: 1rem; }
-  .conf-highlight { grid-template-columns: 1fr; }
-  .conf-img { min-height: 250px; }
-  .conf-content { padding: 3rem 1.5rem; }
-  .clients { padding: 3rem 1.5rem; }
-  .contact-strip { padding: 3rem 1.5rem; }
+/* FOOTER */
+footer{background:var(--forest);padding:5rem 3rem 2rem;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+.footer-brand{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.8rem}
+.footer-tag{font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.4);max-width:280px}
+.footer-col h4{font-family:'Syne',sans-serif;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.2rem;font-weight:600}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col ul li a,.footer-col ul li span{color:rgba(255,255,255,.45);text-decoration:none;font-size:.82rem;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold2)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.73rem;color:rgba(255,255,255,.22)}
+
+/* SCROLL REVEAL */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.rvl{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.rvr{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.rv.in,.rvl.in,.rvr.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .conf{grid-template-columns:1fr}
+  .conf-img-col{min-height:320px}
+  .conf-content{padding:3.5rem 2rem}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .g-tile.tall{grid-row:span 1}
+  .big-cta{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:700px){
+  nav{padding:.9rem 1.5rem}
+  nav.solid{padding:.7rem 1.5rem}
+  .nav-links,.nav-btn{display:none}
+  .ham{display:flex}
+  .hero-body{padding:0 1.5rem 4rem}
+  .hero h1{font-size:3rem}
+  .qbar{grid-template-columns:1fr 1fr}
+  .qi{border-bottom:1px solid rgba(255,255,255,.08);border-right:none}
+  .about{grid-template-columns:1fr;padding:5rem 1.5rem;gap:3rem}
+  .about-chip,.about-thumb{display:none}
+  .services{padding:5rem 1.5rem}
+  .svc-grid{grid-template-columns:1fr}
+  .restaurant{padding:5rem 1.5rem}
+  .rest-grid{grid-template-columns:1fr;gap:2.5rem}
+  .rooms{padding:5rem 1.5rem}
+  .rooms-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-caption{padding:1.5rem}
+  .clients{padding:4rem 1.5rem}
+  .big-cta{padding:4rem 1.5rem}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  footer{padding:3.5rem 1.5rem 2rem}
 }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-main">Greenland Holiday Centre</span>
-    <span class="nav-logo-sub">Molo, Nakuru County</span>
+  <a href="index.html" class="logo">
+    <span class="logo-main">Greenland Holiday Centre</span>
+    <span class="logo-sub">Molo · Nakuru County</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -97,192 +241,261 @@
     <li><a href="accommodation.html">Stay</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Enquire Now</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="contact.html" class="nav-btn">Enquire Now</a>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+<div class="mob" id="mob">
+  <button class="mob-x" id="mobX">✕</button>
   <a href="index.html">Home</a>
   <a href="conference.html">Conferences</a>
   <a href="accommodation.html">Stay</a>
   <a href="contact.html">Contact</a>
-  <a href="contact.html" style="color:var(--gold-light); font-size:1.2rem; margin-top:1rem;">Enquire Now →</a>
 </div>
 
-<!-- HERO -->
+<!-- HERO — real entrance photo -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Molo · Nakuru County · Rift Valley</div>
-    <h1>Your Meeting.<br><em>Our Venue.</em><br>Molo's Choice.</h1>
-    <p class="hero-sub">Greenland Holiday Centre is Molo's trusted venue for conferences, workshops, training sessions and comfortable accommodation — serving businesses, NGOs, government bodies and community groups.</p>
-    <div class="hero-actions">
-      <a href="conference.html" class="btn btn-gold">Conference Facilities</a>
-      <a href="contact.html" class="btn btn-outline-light">Get a Quote</a>
+  <img class="hero-img" src="img-entrance.jpg" alt="Greenland Holiday Centre entrance, Molo">
+  <div class="hero-ov"></div>
+  <div class="hero-body">
+    <div class="eyebrow"><span class="edot"></span><span class="etxt">Molo · Nakuru County · Rift Valley</span></div>
+    <h1>Where <span class="it">Molo</span><br>Meets,<br><span class="ol">Trains</span><br>&amp; Stays.</h1>
+    <p class="hero-desc">Greenland Holiday Centre — Molo's trusted venue for conferences, NGO workshops, government trainings, community events and comfortable accommodation in the Kenyan highlands.</p>
+    <div class="hero-ctas">
+      <a href="conference.html" class="btn-gold">Conference Facilities →</a>
+      <a href="contact.html" class="btn-ghost">Get a Quote</a>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll to explore</span>
   </div>
 </section>
 
-<!-- QUICK INFO BAR -->
-<div class="info-bar">
-  <div class="info-item">
-    <span class="info-icon">📍</span>
-    <div>
-      <div class="info-label">Location</div>
-      <div class="info-val">Molo-Olenguruone Road, past Equity Bank</div>
-    </div>
-  </div>
-  <div class="info-item">
-    <span class="info-icon">📞</span>
-    <div>
-      <div class="info-label">Call or WhatsApp</div>
-      <div class="info-val">+254 702 102207</div>
-    </div>
-  </div>
-  <div class="info-item">
-    <span class="info-icon">🏢</span>
-    <div>
-      <div class="info-label">Primary Service</div>
-      <div class="info-val">Conferences, Workshops & Events</div>
-    </div>
-  </div>
-  <div class="info-item">
-    <span class="info-icon">🛏️</span>
-    <div>
-      <div class="info-label">Accommodation</div>
-      <div class="info-val">Bed & Breakfast Available</div>
-    </div>
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="tick-inner">
+    <span class="tick-item">Conferences</span><span class="tick-sep">✦</span>
+    <span class="tick-item">NGO Workshops</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Government Events</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Bed &amp; Breakfast</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Event Catering</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Molo, Kenya</span><span class="tick-sep">✦</span>
+    <span class="tick-item">+254 702 102207</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Conferences</span><span class="tick-sep">✦</span>
+    <span class="tick-item">NGO Workshops</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Government Events</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Bed &amp; Breakfast</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Event Catering</span><span class="tick-sep">✦</span>
+    <span class="tick-item">Molo, Kenya</span><span class="tick-sep">✦</span>
+    <span class="tick-item">+254 702 102207</span><span class="tick-sep">✦</span>
   </div>
 </div>
 
+<!-- QUICK INFO -->
+<div class="qbar">
+  <div class="qi"><span class="qi-icon">📍</span><div><div class="qi-label">Location</div><div class="qi-val">Molo-Olenguruone Rd, past Equity Bank</div></div></div>
+  <div class="qi"><span class="qi-icon">📞</span><div><div class="qi-label">Call or WhatsApp</div><div class="qi-val">+254 702 102207</div></div></div>
+  <div class="qi"><span class="qi-icon">🏢</span><div><div class="qi-label">Speciality</div><div class="qi-val">Conferences, Workshops &amp; Events</div></div></div>
+  <div class="qi"><span class="qi-icon">🛏️</span><div><div class="qi-label">Accommodation</div><div class="qi-val">Bed &amp; Breakfast Available</div></div></div>
+</div>
+
 <!-- ABOUT -->
-<section class="about section">
-  <div class="about-img-wrap">
-    <img class="about-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="Conference meeting at Greenland Holiday Centre" loading="lazy">
-    <div class="about-badge">
-      <strong>Molo</strong>
-      <span>Trusted Venue</span>
-    </div>
+<section class="about">
+  <div class="about-vis rvl">
+    <img class="about-main" src="img-exterior.jpg" alt="Greenland Holiday Centre exterior">
+    <img class="about-thumb" src="img-garden.jpg" alt="Hotel courtyard and garden">
+    <div class="about-chip"><span class="chip-num">Molo</span><span class="chip-label">Nakuru County</span></div>
   </div>
-  <div>
-    <p class="label">Who We Are</p>
-    <h2 class="heading">Molo's Go-To Venue for <em>Events & Stays</em></h2>
-    <div class="gold-line"></div>
-    <p class="subtext">Greenland Holiday Centre is a well-established, locally-rooted venue in Molo, Nakuru County. We specialise in providing a conducive, professional environment for conferences, workshops, training sessions, community meetings and events — while also offering comfortable bed and breakfast accommodation.</p>
-    <p class="subtext mt-1">Whether you are an NGO running a training programme, a government body hosting a workshop, a business team holding a planning session, or a community group organising a gathering — we have the space, the support and the experience to make it work.</p>
-    <div class="about-stats">
-      <div class="astat"><div class="astat-num">B&B</div><div class="astat-label">Accommodation included</div></div>
-      <div class="astat"><div class="astat-num">NGOs</div><div class="astat-label">Government & corporate clients</div></div>
-      <div class="astat"><div class="astat-num">Day</div><div class="astat-label">& residential events hosted</div></div>
-      <div class="astat"><div class="astat-num">Molo</div><div class="astat-label">Nakuru County, Rift Valley</div></div>
+  <div class="rvr">
+    <span class="section-eyebrow">Who We Are</span>
+    <h2 class="h2">Molo's Most <em>Trusted</em> Event Venue</h2>
+    <p class="body-text">Greenland Holiday Centre is Molo's established home for conferences, workshops, trainings and events. We serve businesses, NGOs, government bodies, conservation organisations and community groups who need a professional, well-run venue in Nakuru County.</p>
+    <p class="body-text">Whether it's a half-day workshop for 15 or a multi-day residential training for 60 — we provide the space, the food, the accommodation and the support to make it work.</p>
+    <div class="pills">
+      <span class="pill">Government Events</span>
+      <span class="pill">NGO Workshops</span>
+      <span class="pill">Conservation Projects</span>
+      <span class="pill">Technical Trainings</span>
+      <span class="pill">Bed &amp; Breakfast</span>
+      <span class="pill">Event Catering</span>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services section">
-  <div style="max-width:600px; margin-bottom:3rem;">
-    <p class="label">What We Offer</p>
-    <h2 class="heading">Everything You Need,<br><em>Under One Roof</em></h2>
-    <div class="gold-line"></div>
-    <p class="subtext">From a half-day workshop to a multi-day residential training — we handle the space, the setup and the catering so you can focus on what matters.</p>
+<section class="services">
+  <div class="svc-head rv">
+    <h2>What We <em>Offer</em></h2>
+    <p>Six core services under one roof — everything your event or stay requires in Molo.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <span class="svc-icon">🎯</span>
-      <div class="svc-title">Conferences & Workshops</div>
-      <p class="svc-desc">Fully equipped meeting and conference halls for workshops, training sessions, seminars and community forums of varying sizes.</p>
+  <div class="svc-grid">
+    <div class="svc-card rv"><span class="svc-bg-num">01</span><div class="svc-icon">🎯</div><div class="svc-title">Conferences &amp; Workshops</div><p class="svc-desc">Professional meeting halls for workshops, seminars, trainings and forums of all sizes.</p></div>
+    <div class="svc-card rv"><span class="svc-bg-num">02</span><div class="svc-icon">🏛️</div><div class="svc-title">Government &amp; NGO Events</div><p class="svc-desc">Experienced hosting for government agencies, NGOs, conservation and public sector events.</p></div>
+    <div class="svc-card rv"><span class="svc-bg-num">03</span><div class="svc-icon">🛏️</div><div class="svc-title">Accommodation</div><p class="svc-desc">Clean, spacious rooms with bed and breakfast for delegates and highland travellers.</p></div>
+    <div class="svc-card rv"><span class="svc-bg-num">04</span><div class="svc-icon">🍽️</div><div class="svc-title">Event Catering</div><p class="svc-desc">Full meals, tea breaks and refreshments — fresh and warm, served on schedule.</p></div>
+    <div class="svc-card rv"><span class="svc-bg-num">05</span><div class="svc-icon">🏆</div><div class="svc-title">Ceremonies &amp; Networking</div><p class="svc-desc">Certificate awards, graduation events and professional networking gatherings.</p></div>
+    <div class="svc-card rv"><span class="svc-bg-num">06</span><div class="svc-icon">🚗</div><div class="svc-title">Parking &amp; Access</div><p class="svc-desc">On-site parking. Centrally located along Molo-Olenguruone Road — easy to find.</p></div>
+  </div>
+</section>
+
+<!-- REAL PHOTO GALLERY -->
+<div class="gallery">
+  <div class="gallery-grid">
+    <div class="g-tile tall">
+      <img src="img-restaurant-sign.jpg" alt="Greenland Restaurant entrance with giraffe sculptures">
+      <div class="g-label"><div class="g-label-name">Our Restaurant</div><div class="g-label-desc">Iconic entrance with hand-carved giraffe sculptures</div></div>
     </div>
-    <div class="service-card">
-      <span class="svc-icon">🏛️</span>
-      <div class="svc-title">Government & NGO Events</div>
-      <p class="svc-desc">Experienced in hosting government agencies, NGOs, conservation projects and public sector events with the required setup and catering.</p>
+    <div class="g-tile">
+      <img src="img-dining.jpg" alt="Dining area with wicker chairs and stone floor">
+      <div class="g-label"><div class="g-label-name">Dining Area</div><div class="g-label-desc">Warm wicker chairs &amp; stone-flagged floors</div></div>
     </div>
-    <div class="service-card">
-      <span class="svc-icon">🛏️</span>
-      <div class="svc-title">Accommodation</div>
-      <p class="svc-desc">Spacious, clean and comfortable rooms with bed and breakfast. Ideal for delegates attending multi-day events or travellers in the Rift Valley.</p>
+    <div class="g-tile">
+      <img src="img-restaurant-front.jpg" alt="Restaurant front with giraffe statues">
+      <div class="g-label"><div class="g-label-name">Restaurant Front</div><div class="g-label-desc">Life-size giraffe statues mark the entrance</div></div>
     </div>
-    <div class="service-card">
-      <span class="svc-icon">🍽️</span>
-      <div class="svc-title">Event Catering</div>
-      <p class="svc-desc">Meals, tea breaks and refreshments for your delegates throughout the day. Catering packages available to match your event schedule.</p>
+    <div class="g-tile">
+      <img src="img-garden.jpg" alt="Hotel garden and courtyard">
+      <div class="g-label"><div class="g-label-name">Garden &amp; Grounds</div><div class="g-label-desc">Peaceful courtyard with stone landscaping</div></div>
     </div>
-    <div class="service-card">
-      <span class="svc-icon">🏆</span>
-      <div class="svc-title">Ceremonies & Networking</div>
-      <p class="svc-desc">Hosting certificate award ceremonies, networking events and community meetings with the setup and atmosphere they deserve.</p>
+    <div class="g-tile">
+      <img src="img-exterior.jpg" alt="Hotel exterior rooms block">
+      <div class="g-label"><div class="g-label-name">Accommodation Block</div><div class="g-label-desc">Unique giraffe-pattern exterior design</div></div>
     </div>
-    <div class="service-card">
-      <span class="svc-icon">🚗</span>
-      <div class="svc-title">Parking & Accessibility</div>
-      <p class="svc-desc">On-site parking for delegates and guests. Conveniently located along Molo-Olenguruone Road, easy to find and easy to reach.</p>
+  </div>
+  <div class="gallery-caption">
+    <p>Real photos of Greenland Holiday Centre, Molo — no stock images.</p>
+    <a href="accommodation.html" class="btn-gold" style="font-size:.75rem;padding:.7rem 1.5rem">View Rooms →</a>
+  </div>
+</div>
+
+<!-- RESTAURANT -->
+<section class="restaurant">
+  <div class="rv">
+    <span class="section-eyebrow">Dining &amp; Catering</span>
+    <h2 class="h2">Our Restaurant &amp; <em>Event Kitchen</em></h2>
+  </div>
+  <div class="rest-grid">
+    <div class="rv">
+      <div class="rest-imgs">
+        <div class="big"><img src="img-restaurant-front.jpg" alt="Restaurant with giraffe sculptures"></div>
+        <div class="sm"><img src="img-dining.jpg" alt="Wicker dining chairs inside restaurant"></div>
+        <div class="sm"><img src="img-restaurant-sign.jpg" alt="Restaurant entrance sign"></div>
+      </div>
+    </div>
+    <div class="rvr">
+      <p class="body-text">Our restaurant is one of Molo's most distinctive — marked by iconic hand-carved giraffe sculptures at the entrance and a warm, stone-floored dining area with wicker chairs. We serve freshly prepared Kenyan meals for all guests and event delegates.</p>
+      <p class="body-text" style="margin-bottom:2rem">Bed &amp; breakfast is included for overnight guests. Full catering packages for conferences — including morning tea, lunch and dinner — are available on request.</p>
+      <div class="rest-feature">
+        <div class="rf-icon">☕</div>
+        <div><div class="rf-title">Morning Breakfast</div><div class="rf-desc">Warm Kenyan breakfast included with every room booking</div></div>
+      </div>
+      <div class="rest-feature">
+        <div class="rf-icon">🍽️</div>
+        <div><div class="rf-title">Lunch &amp; Dinner</div><div class="rf-desc">Ugali, rice, nyama choma, vegetables — freshly prepared</div></div>
+      </div>
+      <div class="rest-feature">
+        <div class="rf-icon">🫖</div>
+        <div><div class="rf-title">Event Tea Breaks</div><div class="rf-desc">Mid-morning and afternoon chai &amp; snacks for delegates</div></div>
+      </div>
+      <div class="rest-feature">
+        <div class="rf-icon">📦</div>
+        <div><div class="rf-title">Full Catering Packages</div><div class="rf-desc">Half-day, full-day and multi-day packages available on request</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONFERENCE HIGHLIGHT -->
-<div class="conf-highlight">
-  <img class="conf-img" src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=700&q=80" alt="Workshop training at Greenland" loading="lazy">
-  <div class="conf-content">
-    <p class="label label-light">Conference Venue</p>
-    <h2 class="heading heading-light">A <em>Conducive Environment</em> for Productive Meetings</h2>
-    <div class="gold-line"></div>
-    <p class="subtext subtext-light">We have hosted a wide range of events for organisations across Nakuru County and beyond. Our venue is trusted by those who need a reliable, distraction-free space to get things done.</p>
-    <ul class="conf-list">
-      <li>Installer training programmes and technical workshops</li>
-      <li>Food safety, HACCP and compliance trainings</li>
-      <li>Forest conservation & environmental project meetings</li>
-      <li>Political and community engagement forums</li>
-      <li>Certificate award ceremonies and graduations</li>
-      <li>Business strategy and NGO planning sessions</li>
+<!-- ROOMS -->
+<section class="rooms">
+  <div class="rv">
+    <span class="section-eyebrow">Accommodation</span>
+    <h2 class="h2">Clean, Comfortable <em>Rooms</em></h2>
+    <p class="body-text" style="max-width:560px;margin-top:.5rem">Spacious rooms with mosquito nets, TV, en-suite bathroom and hot water. Bed &amp; breakfast included. Ideal for event delegates and Rift Valley travellers.</p>
+  </div>
+  <div class="rooms-grid">
+    <div class="room-card rv">
+      <img class="room-img" src="img-room1.jpg" alt="Room with double bed and mosquito net">
+      <div class="room-body">
+        <span class="room-tag">Double Room</span>
+        <div class="room-name">Double Room</div>
+        <p class="room-desc">Spacious double room with four-poster bed frame, mosquito net, en-suite bathroom, TV and warm natural light from the window.</p>
+        <div class="room-feats"><span class="rfeat">Double Bed</span><span class="rfeat">Mosquito Net</span><span class="rfeat">En-Suite</span><span class="rfeat">TV</span><span class="rfeat">Hot Water</span></div>
+        <p class="room-price-note">📞 Call <strong>+254 702 102207</strong> for current rates &amp; availability</p>
+      </div>
+    </div>
+    <div class="room-card rv">
+      <img class="room-img" src="img-room2.jpg" alt="Single room with log bed frame and mosquito net">
+      <div class="room-body">
+        <span class="room-tag">Single Room</span>
+        <div class="room-name">Single Room</div>
+        <p class="room-desc">Cosy single room with a handcrafted log bed frame, mosquito net, bedside table and TV. Clean, functional and comfortable.</p>
+        <div class="room-feats"><span class="rfeat">Single Bed</span><span class="rfeat">Log Frame</span><span class="rfeat">Mosquito Net</span><span class="rfeat">TV</span><span class="rfeat">Tiled Floor</span></div>
+        <p class="room-price-note">📞 Call <strong>+254 702 102207</strong> for current rates &amp; availability</p>
+      </div>
+    </div>
+    <div class="room-card rv">
+      <img class="room-img" src="img-room3.jpg" alt="Standard room with single bed and curtained bathroom">
+      <div class="room-body">
+        <span class="room-tag">Standard Room</span>
+        <div class="room-name">Standard Room</div>
+        <p class="room-desc">Comfortable standard room with single bed, curtained en-suite bathroom, bedside cabinet, TV and bright window. Clean &amp; quiet.</p>
+        <div class="room-feats"><span class="rfeat">Single Bed</span><span class="rfeat">Mosquito Net</span><span class="rfeat">En-Suite</span><span class="rfeat">TV</span><span class="rfeat">Quiet</span></div>
+        <p class="room-price-note">📞 Call <strong>+254 702 102207</strong> for current rates &amp; availability</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCE SPLIT -->
+<div class="conf">
+  <div class="conf-img-col">
+    <img src="img-entrance.jpg" alt="Greenland Holiday Centre grounds">
+    <div class="conf-ov"></div>
+    <span class="conf-badge">Conference Venue</span>
+  </div>
+  <div class="conf-content rvr">
+    <span class="section-eyebrow" style="color:var(--rust)">Why Organisations Choose Us</span>
+    <h2 class="h2">A <em>Conducive</em> Space<br>for Real Work</h2>
+    <p class="body-text">We've hosted technical trainers, forest conservationists, food safety inspectors, government officers and NGO coordinators. They return because we consistently deliver.</p>
+    <ul class="conf-bullets">
+      <li><span class="cb-dot">✓</span>Installer training &amp; technical workshops</li>
+      <li><span class="cb-dot">✓</span>Food safety, HACCP &amp; compliance programmes</li>
+      <li><span class="cb-dot">✓</span>South Western Mau Forest conservation meetings</li>
+      <li><span class="cb-dot">✓</span>Political forums &amp; community barazas</li>
+      <li><span class="cb-dot">✓</span>Certificate ceremonies &amp; award events</li>
+      <li><span class="cb-dot">✓</span>Available for public procurement contracts</li>
     </ul>
-    <a href="conference.html" class="btn btn-gold mt-2">View Conference Facilities</a>
+    <a href="conference.html" class="btn-gold">View Conference Facilities →</a>
   </div>
 </div>
 
 <!-- CLIENTS -->
 <section class="clients">
-  <p class="label" style="justify-content:center; display:block;">Who We Serve</p>
-  <h2 class="heading" style="color:var(--green-deep);">Trusted by Organisations <em>Across the Region</em></h2>
-  <div class="gold-line" style="margin:1rem auto 0;"></div>
-  <div class="clients-grid">
-    <div class="client-tag">Government Agencies</div>
-    <div class="client-tag">NGOs & Nonprofits</div>
-    <div class="client-tag">Conservation Projects</div>
-    <div class="client-tag">Training Institutions</div>
-    <div class="client-tag">Community Groups</div>
-    <div class="client-tag">Private Companies</div>
-    <div class="client-tag">Political Organisations</div>
-    <div class="client-tag">Public Procurement Entities</div>
-    <div class="client-tag">Health & Safety Programmes</div>
+  <h2 class="rv">Trusted by <em>Organisations</em> Across the Region</h2>
+  <p class="clients-sub rv">From conservation NGOs to government bodies — Molo's go-to venue.</p>
+  <div class="ctags rv">
+    <div class="ctag">Government Agencies</div><div class="ctag">NGOs &amp; Nonprofits</div>
+    <div class="ctag">Conservation Projects</div><div class="ctag">Training Institutions</div>
+    <div class="ctag">Community Groups</div><div class="ctag">Private Companies</div>
+    <div class="ctag">Political Organisations</div><div class="ctag">Public Procurement</div>
+    <div class="ctag">Health &amp; Safety Programmes</div>
   </div>
 </section>
 
-<!-- CONTACT STRIP -->
-<div class="contact-strip">
-  <h2>Ready to Book Your Event?</h2>
-  <p>Contact us for conference packages, accommodation rates and availability.</p>
-  <div class="contact-strip-btns">
-    <a href="tel:+254702102207" class="btn btn-gold">📞 Call +254 702 102207</a>
-    <a href="https://wa.me/254702102207" class="btn btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
-    <a href="contact.html" class="btn btn-outline-light">Send an Enquiry</a>
+<!-- BIG CTA -->
+<div class="big-cta">
+  <div class="rvl"><h2>Ready to Book Your<br><em>Event or Stay?</em></h2></div>
+  <div class="cta-right rvr">
+    <p>Call, WhatsApp or send an enquiry. We respond quickly with availability and a quote tailored to your group.</p>
+    <a href="tel:+254702102207" class="cta-phone">+254 702 102207</a>
+    <div class="cta-row">
+      <a href="https://wa.me/254702102207" class="btn-wa" target="_blank">💬 WhatsApp Us</a>
+      <a href="contact.html" class="btn-ghost">Send Enquiry</a>
+    </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Greenland Holiday Centre</div>
-      <p class="footer-tagline">Molo's trusted venue for conferences, workshops, training sessions and accommodation. Serving businesses, NGOs, government and community groups in Nakuru County.</p>
+      <p class="footer-tag">Molo's trusted venue for conferences, workshops, training sessions and accommodation. Serving businesses, NGOs, government and community groups across Nakuru County.</p>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -290,7 +503,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="conference.html">Conference Facilities</a></li>
         <li><a href="accommodation.html">Accommodation</a></li>
-        <li><a href="contact.html">Contact & Location</a></li>
+        <li><a href="contact.html">Contact &amp; Location</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -306,16 +519,17 @@
   </div>
   <div class="footer-bottom">
     <p>© 2026 Greenland Holiday Centre, Molo. All rights reserved.</p>
-    <a href="#">Website by Your Name / Agency</a>
+    <span style="font-size:.73rem;color:rgba(255,255,255,.3)">Built by <a href="tel:+254745384430" style="color:var(--gold2);text-decoration:none;font-weight:700">John Munyua — 0745 384 430</a></span>
   </div>
 </footer>
 
 <script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-  document.getElementById('hamburger').onclick = () => document.getElementById('mobileMenu').classList.add('open');
-  document.getElementById('mobileClose').onclick = () => document.getElementById('mobileMenu').classList.remove('open');
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>80));
+document.getElementById('ham').onclick=()=>document.getElementById('mob').classList.add('open');
+document.getElementById('mobX').onclick=()=>document.getElementById('mob').classList.remove('open');
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
-
