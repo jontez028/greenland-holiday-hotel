@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Location — Greenland Holiday Centre Molo</title>
+<meta name="description" content="Contact Greenland Holiday Centre in Molo, Nakuru County. Call or WhatsApp +254 702 102207. Located along Molo-Olenguruone Road past Equity Bank.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-hero { background: var(--green-deep); padding: 9rem 3rem 4rem; }
+.contact-hero .breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.contact-hero .breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; }
+.contact-hero .breadcrumb span { color: var(--gold-light); }
+
+/* CONTACT GRID */
+.contact-body { background: var(--warm-white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+
+/* INFO SIDE */
+.contact-info-block { margin-bottom: 2rem; }
+.cib-icon { font-size: 1.6rem; margin-bottom: 0.6rem; display: block; }
+.cib-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+.cib-val { font-size: 1rem; color: var(--text-dark); font-weight: 400; line-height: 1.5; }
+.cib-val a { color: var(--green-soft); text-decoration: none; transition: color 0.2s; }
+.cib-val a:hover { color: var(--green-deep); }
+.cib-sub { font-size: 0.82rem; color: var(--text-muted); margin-top: 3px; }
+.divider-line { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+.quick-btns { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
+.qbtn { display: flex; align-items: center; gap: 12px; padding: 0.9rem 1.2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--border); color: var(--text-dark); transition: all 0.2s; }
+.qbtn:hover { border-color: var(--green-soft); color: var(--green-deep); background: var(--cream); }
+.qbtn.whatsapp { background: #25D366; border-color: #25D366; color: white; }
+.qbtn.whatsapp:hover { background: #1ebe5b; border-color: #1ebe5b; }
+.qbtn-icon { font-size: 1.2rem; }
+
+/* FORM */
+.enquiry-form-wrap { background: white; border: 1px solid var(--border); padding: 2.5rem; }
+.form-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--green-deep); margin-bottom: 0.4rem; }
+.form-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.45rem; font-weight: 500; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border);
+  font-family: 'Barlow', sans-serif; font-size: 0.9rem; color: var(--text-dark);
+  background: var(--warm-white); outline: none; transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green-soft); background: white; }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-note { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6; }
+.submit-btn { width: 100%; padding: 1rem; background: var(--green-deep); color: white; border: none; font-family: 'Barlow', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.submit-btn:hover { background: var(--green-mid); }
+.form-success { display: none; background: #EAF3DE; border: 1px solid #3B6D11; padding: 1.2rem; color: #1a4a09; font-size: 0.9rem; line-height: 1.6; margin-top: 1rem; }
+.form-success.show { display: block; }
+
+/* MAP */
+.map-section { background: var(--cream); }
+.map-section iframe { width: 100%; height: 420px; border: 0; display: block; }
+.map-directions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.dir-card { background: white; border: 1px solid var(--border); padding: 1.4rem; }
+.dir-icon { font-size: 1.5rem; display: block; margin-bottom: 0.6rem; }
+.dir-from { font-weight: 600; color: var(--green-deep); font-size: 0.88rem; margin-bottom: 0.3rem; }
+.dir-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+/* SOCIAL STRIP */
+.social-strip { background: var(--green-deep); padding: 3rem; text-align: center; }
+.social-strip h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: white; margin-bottom: 0.5rem; }
+.social-strip p { color: rgba(255,255,255,0.55); font-size: 0.88rem; margin-bottom: 1.5rem; }
+.social-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.social-btn { display: flex; align-items: center; gap: 8px; padding: 0.7rem 1.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; border: 1px solid rgba(255,255,255,0.2); color: white; transition: all 0.2s; }
+.social-btn:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+@media (max-width: 900px) {
+  .contact-hero { padding: 8rem 1.5rem 3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .enquiry-form-wrap { padding: 1.5rem; }
+  .map-section iframe { height: 300px; }
+  .social-strip { padding: 2.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">Greenland Holiday Centre</span>
+    <span class="nav-logo-sub">Molo, Nakuru County</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="conference.html">Conferences</a></li>
+    <li><a href="accommodation.html">Stay</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Enquire Now</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  <a href="index.html">Home</a>
+  <a href="conference.html">Conferences</a>
+  <a href="accommodation.html">Stay</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> › <span>Contact & Location</span></div>
+  <p class="label label-light">Get In Touch</p>
+  <h2 class="heading heading-light">We're <em>Here</em> to Help</h2>
+  <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; max-width:480px; margin-top:0.8rem; font-weight:300; line-height:1.7;">Reach out to enquire about conference packages, accommodation availability, or anything else. We respond promptly.</p>
+</div>
+
+<!-- CONTACT BODY -->
+<section class="contact-body section">
+  <div class="contact-grid">
+    <!-- INFO -->
+    <div>
+      <p class="label">Contact Details</p>
+      <h2 class="heading" style="font-size:1.8rem; margin-bottom:2rem;">Reach Us <em>Directly</em></h2>
+
+      <div class="contact-info-block">
+        <span class="cib-icon">📞</span>
+        <div class="cib-label">Phone / WhatsApp</div>
+        <div class="cib-val"><a href="tel:+254702102207">+254 702 102207</a></div>
+        <div class="cib-sub">Call or WhatsApp — we respond quickly</div>
+      </div>
+
+      <hr class="divider-line">
+
+      <div class="contact-info-block">
+        <span class="cib-icon">📍</span>
+        <div class="cib-label">Physical Address</div>
+        <div class="cib-val">Along Molo-Olenguruone Road<br>Past Equity Bank, Molo<br>Nakuru County, Kenya</div>
+      </div>
+
+      <hr class="divider-line">
+
+      <div class="contact-info-block">
+        <span class="cib-icon">📘</span>
+        <div class="cib-label">Facebook</div>
+        <div class="cib-val"><a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" target="_blank">Greenland Holiday Centre</a></div>
+        <div class="cib-sub">Follow us for updates and events</div>
+      </div>
+
+      <hr class="divider-line">
+
+      <div class="contact-info-block">
+        <span class="cib-icon">🕐</span>
+        <div class="cib-label">Availability</div>
+        <div class="cib-val">Open Daily</div>
+        <div class="cib-sub">For events and accommodation enquiries</div>
+      </div>
+
+      <div class="quick-btns">
+        <a href="https://wa.me/254713549580?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20conference%20and%20accommodation%20facilities." class="qbtn whatsapp" target="_blank">
+          <span class="qbtn-icon">💬</span> WhatsApp Us Now
+        </a>
+        <a href="tel:+254702102207" class="qbtn">
+          <span class="qbtn-icon">📞</span> Call +254 702 102207
+        </a>
+        <a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" class="qbtn" target="_blank">
+          <span class="qbtn-icon">📘</span> Message on Facebook
+        </a>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="enquiry-form-wrap">
+      <div class="form-title">Send an Enquiry</div>
+      <p class="form-sub">Fill in the form below and we will get back to you within 24 hours via phone or WhatsApp.</p>
+
+      <form id="enquiryForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" placeholder="+254 7XX XXX XXX" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Organisation / Company</label>
+          <input type="text" placeholder="NGO, company, government body, etc.">
+        </div>
+        <div class="form-group">
+          <label>Enquiry Type *</label>
+          <select required>
+            <option value="">Select enquiry type...</option>
+            <option>Conference / Workshop Booking</option>
+            <option>Accommodation / Bed & Breakfast</option>
+            <option>Combined Conference + Accommodation Package</option>
+            <option>Event Catering Only</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Event / Arrival Date</label>
+            <input type="date">
+          </div>
+          <div class="form-group">
+            <label>Number of People</label>
+            <input type="number" min="1" placeholder="e.g. 25">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Message</label>
+          <textarea placeholder="Tell us about your event or stay — dates, group size, special requirements..."></textarea>
+        </div>
+        <p class="form-note">📌 We will contact you via the phone number provided. For faster response, use the WhatsApp button above.</p>
+        <button type="submit" class="submit-btn">Send Enquiry →</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        ✅ <strong>Enquiry sent!</strong> Thank you for reaching out. We will contact you via phone or WhatsApp within 24 hours to discuss your requirements.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section section-sm">
+  <p class="label">Our Location</p>
+  <h2 class="heading" style="margin-bottom:1.5rem;">Find Us on the Map</h2>
+  <iframe src="https://www.google.com/maps?q=-0.2554588,35.7264809&z=17&output=embed" allowfullscreen loading="lazy" title="Greenland Holiday Centre Molo on Google Maps"></iframe>
+
+  <div class="map-directions">
+    <div class="dir-card"><span class="dir-icon">🚗</span><div class="dir-from">From Nakuru</div><p class="dir-desc">Take the Nakuru-Molo Road towards Molo town. We are along Molo-Olenguruone Road, past Equity Bank.</p></div>
+    <div class="dir-card"><span class="dir-icon">🚌</span><div class="dir-from">From Kericho</div><p class="dir-desc">Travel towards Molo via the Kericho-Molo highway. Enter Molo town and follow signs for the Olenguruone road.</p></div>
+    <div class="dir-card"><span class="dir-icon">🗺️</span><div class="dir-from">Landmark</div><p class="dir-desc">We are located past Equity Bank along Molo-Olenguruone Road. Easy to spot once you enter the road.</p></div>
+    <div class="dir-card"><span class="dir-icon">📞</span><div class="dir-from">Can't Find Us?</div><p class="dir-desc">Call <a href="tel:+254702102207" style="color:var(--green-soft);">+254 702 102207</a> and we will guide you to the venue directly.</p></div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<div class="social-strip">
+  <h3>Stay Connected</h3>
+  <p>Follow us on Facebook for event photos, updates and announcements.</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" target="_blank" class="social-btn">📘 Facebook — Greenland Holiday Centre</a>
+    <a href="https://wa.me/254713549580" target="_blank" class="social-btn">💬 WhatsApp +254 702 102207</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand">Greenland Holiday Centre</div><p class="footer-tagline">Molo's trusted venue for conferences, workshops, training sessions and accommodation in Nakuru County.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="conference.html">Conference Facilities</a></li><li><a href="accommodation.html">Accommodation</a></li><li><a href="contact.html">Contact & Location</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><span>📍 Molo-Olenguruone Road</span></li><li><span>Past Equity Bank, Molo</span></li><li><a href="tel:+254702102207">📞 +254 702 102207</a></li><li><a href="https://wa.me/254713549580">💬 WhatsApp</a></li><li><a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" target="_blank">📘 Facebook Page</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Greenland Holiday Centre, Molo. All rights reserved.</p><span style="font-size:0.75rem;color:rgba(255,255,255,0.4)">Built by <a href="tel:+254745384430" style="color:var(--gold-light);text-decoration:none;font-weight:500">John Munyua — 0745 384 430</a></span></div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav'); nav.classList.add('scrolled');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+  document.getElementById('hamburger').onclick = () => document.getElementById('mobileMenu').classList.add('open');
+  document.getElementById('mobileClose').onclick = () => document.getElementById('mobileMenu').classList.remove('open');
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('enquiryForm').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  }
+</script>
+</body>
+</html>

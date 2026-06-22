@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conference & Events — Greenland Holiday Centre Molo</title>
+<meta name="description" content="Book Greenland Holiday Centre in Molo for your conference, workshop, NGO training, government meeting or community event. Real venue, real results.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e1a0f;--forest:#1a4028;--forest2:#2d6644;--leaf:#3d8b5e;--gold:#d4943a;--gold2:#f0b84a;--cream:#fdf6ed;--sand:#f0e6d0;--rust:#c45c2a;--white:#fff;--muted:#6b7a6e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:.8rem 3rem;display:flex;align-items:center;justify-content:space-between;background:var(--forest);box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.logo{text-decoration:none}
+.logo-main{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#fff;display:block;letter-spacing:.02em;line-height:1.2}
+.logo-sub{font-size:.58rem;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.2em;text-transform:uppercase;display:block;margin-top:2px}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold2)}
+.nav-btn{background:var(--gold);color:var(--forest);font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.4rem;text-decoration:none;border:2px solid var(--gold);transition:all .2s}
+.nav-btn:hover{background:transparent;color:var(--gold2);border-color:var(--gold2)}
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.ham span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;inset:0;background:var(--forest);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mob.open{display:flex}
+.mob a{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;text-decoration:none}
+.mob a:hover{color:var(--gold2)}
+.mob-x{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+
+/* PAGE HERO */
+.page-hero{position:relative;padding:9rem 3rem 5rem;overflow:hidden;min-height:480px;display:flex;align-items:flex-end}
+.ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.ph-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,12,.92) 0%,rgba(10,20,12,.5) 60%,rgba(10,20,12,.25) 100%)}
+.ph-body{position:relative;z-index:2;max-width:700px}
+.breadcrumb{display:flex;gap:8px;align-items:center;font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--gold2)}
+.breadcrumb span{color:var(--gold2)}
+.eyebrow{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:600;display:block;margin-bottom:.8rem}
+.page-h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,6vw,4.5rem);font-weight:800;color:#fff;line-height:1;margin-bottom:1rem}
+.page-h1 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--gold2)}
+.page-sub{font-size:.95rem;color:rgba(255,255,255,.6);max-width:520px;line-height:1.7;font-weight:300}
+
+/* SECTION COMMONS */
+.sec{padding:6rem 3rem}
+.sec-sm{padding:4rem 3rem}
+.sec-eyebrow{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--leaf);font-weight:600;display:block;margin-bottom:.8rem}
+.sec-eyebrow.rust{color:var(--rust)}
+.sec-eyebrow.gold{color:var(--gold)}
+.h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--ink);line-height:1.05;margin-bottom:1rem}
+.h2 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--rust)}
+.h2-light{color:#fff}
+.h2-light em{color:var(--gold2)}
+.gold-bar{width:40px;height:3px;background:var(--gold);margin:1rem 0 1.4rem}
+.body-text{font-size:.92rem;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--forest);font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;text-decoration:none;transition:all .25s;border:2px solid var(--gold)}
+.btn-gold:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-3px)}
+.btn-ghost-dark{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--forest);font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;border:2px solid var(--forest);text-decoration:none;transition:all .25s}
+.btn-ghost-dark:hover{background:var(--forest);color:#fff;transform:translateY(-3px)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;text-decoration:none;transition:all .25s;border:2px solid #25D366}
+.btn-wa:hover{background:#1ebe5b;transform:translateY(-3px)}
+.btn-ghost-light{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2rem;border:2px solid rgba(255,255,255,.35);text-decoration:none;transition:all .25s}
+.btn-ghost-light:hover{border-color:#fff;transform:translateY(-3px)}
+
+/* WHY GRID */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.why-card{border-top:3px solid var(--gold);padding:2rem 1.8rem;background:#fff;transition:transform .3s,box-shadow .3s}
+.why-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.why-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:.6rem;opacity:.6}
+.why-title{font-family:'Syne',sans-serif;font-weight:700;color:var(--forest);font-size:.92rem;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.04em}
+.why-desc{font-size:.83rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* EVENTS GRID */
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--sand);margin-top:3rem}
+.event-card{background:var(--cream);padding:2.2rem;transition:background .25s,transform .25s}
+.event-card:hover{background:#fff;transform:translateY(-3px)}
+.event-icon{font-size:2rem;display:block;margin-bottom:1rem}
+.event-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--forest);margin-bottom:.5rem}
+.event-desc{font-size:.82rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* INCLUDED */
+.included{background:var(--forest);padding:6rem 3rem}
+.included-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.included-img-wrap{position:relative}
+.included-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.inc-accent{position:absolute;bottom:-2rem;right:-2rem;width:48%;aspect-ratio:3/4;object-fit:cover;border:5px solid var(--forest)}
+.inc-list{list-style:none;display:flex;flex-direction:column;gap:.9rem;margin-top:1.5rem}
+.inc-list li{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.5;font-weight:300}
+.inc-check{width:22px;height:22px;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--forest);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* FOOD STRIP */
+.food-strip-sec{background:var(--sand);padding:6rem 3rem}
+.food-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:3rem}
+.fs-tile{position:relative;overflow:hidden;aspect-ratio:3/4}
+.fs-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.fs-tile:hover img{transform:scale(1.07)}
+.fs-overlay{position:absolute;bottom:0;left:0;right:0;padding:3rem 1rem 1rem;background:linear-gradient(transparent,rgba(10,20,12,.9))}
+.fs-name{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:2px}
+.fs-desc{font-size:.7rem;color:rgba(255,255,255,.55)}
+
+/* PROCESS */
+.process{background:var(--cream);padding:6rem 3rem;text-align:center}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:2rem;left:12.5%;right:12.5%;height:1px;background:linear-gradient(to right,var(--gold),var(--gold2),var(--gold));opacity:.3}
+.pstep{position:relative}
+.pstep-circle{width:56px;height:56px;border-radius:50%;background:var(--forest);color:var(--gold2);font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;position:relative;z-index:1}
+.pstep-title{font-family:'Syne',sans-serif;font-weight:700;color:var(--forest);font-size:.88rem;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.04em}
+.pstep-desc{font-size:.8rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* ENQUIRY BOX */
+.enquiry{background:var(--ink);padding:6rem 3rem}
+.enquiry-inner{max-width:740px;margin:0 auto;text-align:center}
+.enquiry-inner h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:.8rem}
+.enquiry-inner h2 em{font-family:'Lora',serif;font-style:italic;font-weight:400;color:var(--gold2)}
+.enquiry-inner p{font-size:.92rem;color:rgba(255,255,255,.5);margin-bottom:2.5rem;line-height:1.7;font-weight:300}
+.eq-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
+.eq-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:1.4rem;text-align:center;transition:background .2s}
+.eq-card:hover{background:rgba(255,255,255,.09)}
+.eq-label{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.4rem}
+.eq-val{font-size:.9rem;color:#fff;font-weight:400}
+.eq-val a{color:var(--gold2);text-decoration:none}
+.eq-val a:hover{color:#fff}
+.eq-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--forest);padding:5rem 3rem 2rem;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:4rem}
+.footer-brand{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.8rem}
+.footer-tag{font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.4);max-width:280px}
+.footer-col h4{font-family:'Syne',sans-serif;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.2rem;font-weight:600}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col ul li a,.footer-col ul li span{color:rgba(255,255,255,.45);text-decoration:none;font-size:.82rem;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold2)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.73rem;color:rgba(255,255,255,.22)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.rvl{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.rvr{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.rv.in,.rvl.in,.rvr.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .why-grid{grid-template-columns:1fr 1fr}
+  .events-grid{grid-template-columns:1fr 1fr}
+  .included-grid{grid-template-columns:1fr}
+  .inc-accent{display:none}
+  .food-strip{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .process-steps::before{display:none}
+  .eq-cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:700px){
+  nav{padding:.7rem 1.5rem}
+  .nav-links,.nav-btn{display:none}
+  .ham{display:flex}
+  .page-hero{padding:7rem 1.5rem 4rem}
+  .sec{padding:4.5rem 1.5rem}
+  .sec-sm{padding:3rem 1.5rem}
+  .why-grid{grid-template-columns:1fr}
+  .events-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  footer{padding:3.5rem 1.5rem 2rem}
+  .enquiry{padding:4rem 1.5rem}
+  .food-strip{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-main">Greenland Holiday Centre</span>
+    <span class="logo-sub">Molo · Nakuru County</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="conference.html" class="active">Conferences</a></li>
+    <li><a href="accommodation.html">Stay</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Enquire Now</a>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mob">
+  <button class="mob-x" id="mobX">✕</button>
+  <a href="index.html">Home</a>
+  <a href="conference.html">Conferences</a>
+  <a href="accommodation.html">Stay</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <img class="ph-img" src="img-dining.jpg" alt="Conference dining at Greenland">
+  <div class="ph-ov"></div>
+  <div class="ph-body">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Conference &amp; Events</span></div>
+    <span class="eyebrow">Conference &amp; Events</span>
+    <h1 class="page-h1">A Space Built for<br><em>Productive Work</em></h1>
+    <p class="page-sub">Workshops, trainings, government forums, NGO sessions, community meetings — we create the right environment for your event to succeed in Molo.</p>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="sec" style="background:var(--cream)">
+  <div class="rv">
+    <span class="sec-eyebrow">Why Choose Us</span>
+    <h2 class="h2">Molo's Most <em>Reliable</em> Event Venue</h2>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card rv"><div class="why-num">01</div><div class="why-title">Proven Track Record</div><p class="why-desc">Regularly hosting government, NGO, corporate and community events. Our clients return because we deliver consistently, every time.</p></div>
+    <div class="why-card rv"><div class="why-num">02</div><div class="why-title">Conducive Environment</div><p class="why-desc">Quiet, professional and well-maintained spaces designed to minimise distraction and maximise the productivity of your group.</p></div>
+    <div class="why-card rv"><div class="why-num">03</div><div class="why-title">Full Catering Support</div><p class="why-desc">Tea breaks, lunch and full-day meals for your delegates — freshly prepared on-site so your agenda is never interrupted.</p></div>
+    <div class="why-card rv"><div class="why-num">04</div><div class="why-title">Accommodation On-Site</div><p class="why-desc">Delegates travelling from outside Molo can stay on-site. No separate hotel bookings needed — everything is here.</p></div>
+    <div class="why-card rv"><div class="why-num">05</div><div class="why-title">Central Molo Location</div><p class="why-desc">Along Molo-Olenguruone Road, past Equity Bank. Easy to find and reach from Nakuru, Kericho or Nairobi.</p></div>
+    <div class="why-card rv"><div class="why-num">06</div><div class="why-title">Competitive Rates</div><p class="why-desc">Mid-range pricing suited to Kenyan businesses, government budgets and NGO procurement processes. No hidden costs.</p></div>
+  </div>
+</section>
+
+<!-- EVENTS WE HOST -->
+<section class="sec" style="background:var(--sand)">
+  <div class="rv">
+    <span class="sec-eyebrow rust">Events We Host</span>
+    <h2 class="h2">Whatever Your Event,<br><em>We Have the Space</em></h2>
+    <div class="gold-bar"></div>
+  </div>
+  <div class="events-grid rv">
+    <div class="event-card"><span class="event-icon">🔧</span><div class="event-title">Technical Training &amp; Workshops</div><p class="event-desc">Installer training, food safety, HACCP certification, industry skills and hands-on workshops for professional groups.</p></div>
+    <div class="event-card"><span class="event-icon">🌿</span><div class="event-title">Conservation &amp; Environment</div><p class="event-desc">Project meetings for conservation organisations — including South Western Mau Forest and similar environmental programmes.</p></div>
+    <div class="event-card"><span class="event-icon">🏛️</span><div class="event-title">Government &amp; Public Sector</div><p class="event-desc">Meetings, forums and trainings for county and national government. Available for public procurement contracts.</p></div>
+    <div class="event-card"><span class="event-icon">🤝</span><div class="event-title">NGO &amp; Development</div><p class="event-desc">Planning meetings, community consultations, donor workshops and multi-day residential programme sessions.</p></div>
+    <div class="event-card"><span class="event-icon">🏆</span><div class="event-title">Ceremonies &amp; Networking</div><p class="event-desc">Certificate presentations, staff recognition events, professional networking and business forums.</p></div>
+    <div class="event-card"><span class="event-icon">👥</span><div class="event-title">Community &amp; Political Forums</div><p class="event-desc">Community barazas, political meetings, stakeholder forums and public consultations at county level.</p></div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+  <div class="included-grid">
+    <div class="included-img-wrap rvl">
+      <img class="included-img" src="img-dining.jpg" alt="Wicker dining area for delegates">
+      <img class="inc-accent" src="img-restaurant-front.jpg" alt="Restaurant entrance">
+    </div>
+    <div class="rvr">
+      <span class="sec-eyebrow gold">What's Included</span>
+      <h2 class="h2 h2-light">Everything Your<br><em>Event Needs</em></h2>
+      <div class="gold-bar"></div>
+      <p class="body-text" style="color:rgba(255,255,255,.6)">We handle the logistics so your team can focus entirely on the programme. Here is what comes standard with every conference or event booking:</p>
+      <ul class="inc-list">
+        <li><span class="inc-check">✓</span>Meeting or conference hall setup with seating of your choice</li>
+        <li><span class="inc-check">✓</span>Morning tea, lunch and afternoon break catering for delegates</li>
+        <li><span class="inc-check">✓</span>On-site parking for all attendees — free of charge</li>
+        <li><span class="inc-check">✓</span>Accommodation for residential delegates with bed &amp; breakfast</li>
+        <li><span class="inc-check">✓</span>Attentive on-site staff available throughout your event</li>
+        <li><span class="inc-check">✓</span>Day and residential event packages available</li>
+        <li><span class="inc-check">✓</span>Flexible sizing for small groups or large community forums</li>
+      </ul>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn-gold">Request a Package Quote →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT FOOD -->
+<section class="food-strip-sec">
+  <div class="rv">
+    <span class="sec-eyebrow">Event Catering</span>
+    <h2 class="h2">Keeping Delegates <em>Fuelled &amp; Focused</em></h2>
+    <div class="gold-bar"></div>
+    <p class="body-text" style="max-width:580px">Fresh, warm Kenyan meals and refreshments served throughout your event. Our kitchen ensures your delegates stay energised and your programme runs without interruption.</p>
+  </div>
+  <div class="food-strip rv">
+    <div class="fs-tile">
+      <img src="food-6.jpg" alt="Nyama choma fresh off the grill">
+      <div class="fs-overlay"><div class="fs-name">Our Restaurant</div><div class="fs-desc">Iconic giraffe-entrance in Molo</div></div>
+    </div>
+    <div class="fs-tile">
+      <img src="food-2.jpg" alt="Ugali with beef stew and sukuma">
+      <div class="fs-overlay"><div class="fs-name">Dining Area</div><div class="fs-desc">Warm wicker chairs &amp; stone floors</div></div>
+    </div>
+    <div class="fs-tile">
+      <img src="food-1.jpg" alt="Roast platter with potatoes">
+      <div class="fs-overlay"><div class="fs-name">Morning Breakfast</div><div class="fs-desc">Included for all residential delegates</div></div>
+    </div>
+    <div class="fs-tile">
+      <img src="food-5.jpg" alt="BBQ ribs for event delegates">
+      <div class="fs-overlay"><div class="fs-name">Outdoor Space</div><div class="fs-desc">Breaks &amp; networking in our gardens</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO BOOK -->
+<section class="process">
+  <div class="rv">
+    <span class="sec-eyebrow" style="display:block;text-align:center">How to Book</span>
+    <h2 class="h2" style="text-align:center">Simple Process, <em>No Hassle</em></h2>
+    <div class="gold-bar" style="margin:1rem auto"></div>
+  </div>
+  <div class="process-steps rv">
+    <div class="pstep"><div class="pstep-circle">1</div><div class="pstep-title">Contact Us</div><p class="pstep-desc">Call or WhatsApp +254 702 102207 to check availability for your date.</p></div>
+    <div class="pstep"><div class="pstep-circle">2</div><div class="pstep-title">Get a Quote</div><p class="pstep-desc">We give you a customised quote based on group size, days and catering.</p></div>
+    <div class="pstep"><div class="pstep-circle">3</div><div class="pstep-title">Confirm Booking</div><p class="pstep-desc">Agree the package and confirm. We reserve the date for your event.</p></div>
+    <div class="pstep"><div class="pstep-circle">4</div><div class="pstep-title">Hold Your Event</div><p class="pstep-desc">Arrive on the day. Our team handles setup, catering and support.</p></div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="enquiry">
+  <div class="enquiry-inner rv">
+    <h2>Book Your Conference <em>Today</em></h2>
+    <p>Rates are competitive and tailored to your group size. Get in touch for a quote within 24 hours. We're responsive on WhatsApp.</p>
+    <div class="eq-cards">
+      <div class="eq-card"><div class="eq-label">Phone / WhatsApp</div><div class="eq-val"><a href="tel:+254702102207">+254 702 102207</a></div></div>
+      <div class="eq-card"><div class="eq-label">Facebook</div><div class="eq-val"><a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" target="_blank">Greenland Holiday Centre</a></div></div>
+      <div class="eq-card"><div class="eq-label">Location</div><div class="eq-val">Molo-Olenguruone Rd, past Equity Bank</div></div>
+    </div>
+    <div class="eq-btns">
+      <a href="tel:+254702102207" class="btn-gold">📞 Call Now</a>
+      <a href="https://wa.me/254713549580" class="btn-wa" target="_blank">💬 WhatsApp</a>
+      <a href="contact.html" class="btn-ghost-light">Send Enquiry Form</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Greenland Holiday Centre</div>
+      <p class="footer-tag">Molo's trusted venue for conferences, workshops, training sessions and accommodation in Nakuru County.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="conference.html">Conference Facilities</a></li>
+        <li><a href="accommodation.html">Accommodation</a></li>
+        <li><a href="contact.html">Contact &amp; Location</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><span>📍 Molo-Olenguruone Road</span></li>
+        <li><span>Past Equity Bank, Molo</span></li>
+        <li><a href="tel:+254702102207">📞 +254 702 102207</a></li>
+        <li><a href="https://wa.me/254713549580">💬 WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/p/Greenland-Holiday-Centre-100063785356454/" target="_blank">📘 Facebook Page</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Greenland Holiday Centre, Molo. All rights reserved.</p>
+    <span style="font-size:.73rem;color:rgba(255,255,255,.3)">Built by <a href="tel:+254745384430" style="color:var(--gold2);text-decoration:none;font-weight:700">John Munyua — 0745 384 430</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('ham').onclick=()=>document.getElementById('mob').classList.add('open');
+document.getElementById('mobX').onclick=()=>document.getElementById('mob').classList.remove('open');
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.1});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* Greenland Holiday Centre — shared styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Barlow:wght@300;400;500;600&display=swap');
+
+:root {
+  --green-deep: #1b3a28;
+  --green-mid:  #2a5c3f;
+  --green-soft: #3d7a56;
+  --gold:       #c8983a;
+  --gold-light: #e0b55a;
+  --cream:      #f7f3ec;
+  --warm-white: #faf8f4;
+  --text-dark:  #1a1a16;
+  --text-mid:   #3f3f35;
+  --text-muted: #6e6e60;
+  --border:     rgba(43,92,63,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Barlow', sans-serif; background: var(--warm-white); color: var(--text-dark); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 3rem;
+  transition: background 0.35s, padding 0.35s;
+}
+nav.scrolled { background: rgba(27,58,40,0.97); backdrop-filter: blur(10px); padding: 0.7rem 3rem; }
+.nav-logo { text-decoration: none; }
+.nav-logo-main { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; letter-spacing: 0.02em; display: block; line-height: 1.2; }
+.nav-logo-sub { font-size: 0.6rem; color: rgba(255,255,255,0.55); letter-spacing: 0.22em; text-transform: uppercase; display: block; margin-top: 2px; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+.nav-cta { background: var(--gold); color: var(--green-deep); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.55rem 1.4rem; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--gold-light); }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; }
+.mobile-menu { display: none; position: fixed; inset: 0; background: var(--green-deep); z-index: 300; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: white; text-decoration: none; font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; transition: color 0.2s; }
+.mobile-menu a:hover { color: var(--gold-light); }
+.mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; line-height: 1; }
+
+/* FOOTER */
+footer { background: var(--green-deep); color: rgba(255,255,255,0.6); padding: 3.5rem 3rem 1.5rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+.footer-brand { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: white; margin-bottom: 0.7rem; }
+.footer-tagline { font-size: 0.82rem; line-height: 1.7; color: rgba(255,255,255,0.5); max-width: 280px; }
+.footer-col h4 { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; font-weight: 500; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--gold-light); }
+.footer-col ul li span { color: rgba(255,255,255,0.55); font-size: 0.83rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.footer-bottom a { color: var(--gold); text-decoration: none; font-size: 0.75rem; }
+
+/* SECTION BASE */
+.section { padding: 6rem 3rem; }
+.section-sm { padding: 4rem 3rem; }
+.label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-soft); font-weight: 500; margin-bottom: 0.7rem; }
+.label-light { color: rgba(255,255,255,0.5); }
+.heading { font-family: 'Playfair Display', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 400; color: var(--green-deep); line-height: 1.15; }
+.heading em { font-style: italic; }
+.heading-light { color: white; }
+.subtext { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
+.subtext-light { color: rgba(255,255,255,0.65); }
+.gold-line { width: 40px; height: 2px; background: var(--gold); margin: 1rem 0 1.4rem; }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; transition: all 0.2s; cursor: pointer; border: none; }
+.btn-gold { background: var(--gold); color: var(--green-deep); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline-light { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); }
+.btn-outline-light:hover { border-color: white; transform: translateY(-2px); }
+.btn-outline-dark { background: transparent; color: var(--green-deep); border: 1px solid var(--green-mid); }
+.btn-outline-dark:hover { background: var(--green-deep); color: white; }
+.btn-whatsapp { background: #25D366; color: white; }
+.btn-whatsapp:hover { background: #1ebe5b; transform: translateY(-2px); }
+
+/* CARDS */
+.card { background: white; border: 1px solid var(--border); padding: 1.5rem; }
+
+/* UTILITY */
+.text-center { text-align: center; }
+.max-600 { max-width: 600px; }
+.max-800 { max-width: 800px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.7rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .section { padding: 4rem 1.5rem; }
+  .section-sm { padding: 3rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  footer { padding: 2.5rem 1.5rem 1.5rem; }
+}
